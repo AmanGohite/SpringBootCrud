@@ -71,7 +71,7 @@ public class EmployeeService {
 		return false;
 	}
 
-	public void updateArticle(Employee emp) {
+	public void updateEmployee(Employee emp) {
 		try {
 		empRepository.save(emp);
 		}
