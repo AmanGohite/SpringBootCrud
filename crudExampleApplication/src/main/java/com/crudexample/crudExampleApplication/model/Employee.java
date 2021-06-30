@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;  
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="employee_data")
@@ -17,8 +21,11 @@ public class Employee {
 private Integer employeeId;
 
 @Column(name="name")
+@NotBlank(message="name cannot be blank")
+@Size(min=2,max=25,message="name should be between 2 to 25 characters")  
 private String Name;
 
+@NotBlank(message="email cannot be blank")
 @Column(name="email")
 private String email;
 
